@@ -1,8 +1,28 @@
-name: Events Demo 1
+name: Events Demo 1 # activity types and filters
 on: 
   pull_request:
     types:
       - opened
+    branches:  # filters: pull request to following branches will trigger the workflow
+      - main  # main
+      - 'dev-*' # dev-new, dev-this-is-new
+      - 'feat/**' # feat/new, # feat/new/button
+    
+    branches-ignore:
+      -feature-05
+
+  workflow_dispatch:
+  push:
+    branches:  # pushes to following branches will trigger the workflow
+      - main  # main
+      - 'dev-*' # dev-new, dev-this-is-new
+      - 'feat/**' # feat/new, # feat/new/button
+      # - developer-1 : workflow would not be triggered
+
+    paths-ignore: # paths and paths-ignore filter can be used for pull_requests and push events
+      - '.github/workflows/*' # indicacates push to above branches, when no file is changed in this path.
+                              # paths: '.github/workflows/*' indicates pushes to the branches,
+                              # when atleast one file is changed in this path
 jobs:
   deploy:
     runs-on: ubuntu-latest

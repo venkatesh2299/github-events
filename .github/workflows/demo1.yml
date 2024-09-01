@@ -4,7 +4,7 @@ on:
     types:
       - opened
     branches:  # filters: pull request to following branches will trigger the workflow
-      - main  # main
+      - master  # main
       - 'dev-*' # dev-new, dev-this-is-new
       - 'feat/**' # feat/new, # feat/new/button
     
@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
   push:
     branches:  # pushes to following branches will trigger the workflow
-      - main  # main
+      - master  # main
       - 'dev-*' # dev-new, dev-this-is-new
       - 'feat/**' # feat/new, # feat/new/button
       # - developer-1 : workflow would not be triggered

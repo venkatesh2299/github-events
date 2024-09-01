@@ -8,8 +8,8 @@ on:
       - 'dev-*' # dev-new, dev-this-is-new
       - 'feat/**' # feat/new, # feat/new/button
     
-    branches-ignore:
-      -feature-05
+    # branches-ignore:  we can only specify one of branches or branches-ignore 
+    #   -feature-05
 
   workflow_dispatch:
   push:
